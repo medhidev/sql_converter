@@ -21,9 +21,9 @@
     </a>
 </p>
 
-<!-- <p align="center">
-    <img src="presentation/presentation.gif">
-<p> -->
+<p align="center">
+    <img src="assets/demo.gif">
+<p>
 
 ## Présentation
 
