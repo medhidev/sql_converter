@@ -56,8 +56,22 @@ function generateSQL(table, data) {
     content_global = request;
 }
 
+function autocomplete_table_name() {
+    const file = new FormData(e.currentTarget).get('excel_file');
+
+}
+
 // https://stackoverflow.com/questions/13405129/create-and-save-a-file-with-javascript
 function download_sql_file(filename, content) {
-    const file = new Blob([content], {type: "sql"});
-    window.open(URL.createObjectURL(file));
+    const file = new File([content], `${filename}.sql`, {type: "text/plain"});
+    const url = URL.createObjectURL(file);
+
+    // Simulation d'un lien dans le DOM 
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${filename}.sql`;
+    a.click();
+    URL.revokeObjectURL(url); // garbage collector
+
+    console.log(url);
 }
