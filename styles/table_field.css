@@ -1,0 +1,48 @@
+/* ****** CODEPEN ***** */
+/* copyleft https://codepen.io/alexander-sands/pen/OPbJzYX */
+
+.form_group {
+    width: 150px;
+    max-width: calc(100vw - 80px);
+    padding: 15px 0 0;
+    position: relative;
+}
+
+.form_group .table_name {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #3f585e;
+    /* color: #95beb6; */
+    padding: 7px 0;
+    background: transparent;
+    transition: all 5.2s;
+    width: 100%;
+    font-size: 16px;
+}
+
+.form_group .table_name:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image-slice: 1;
+}
+
+.form_group .table_name::placeholder {
+    color: transparent;
+}
+
+.form_group .table_name:not(:focus)~.label {
+    font-size: 16px;
+    cursor: text;
+    top: 20px;
+    color: #0effcf;
+}
+
+.form_group .label_table_name {
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: 0.2s;
+    color: #08c8a2;
+    font-size: 16px;
+}

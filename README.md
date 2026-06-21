@@ -36,10 +36,12 @@ Ce projet permettrait donc aux techniciens de simplifier la traduction de donné
 | Fonctionnalités                         | Etat     |
 |-----------------------------------------|----------|
 | Prise en charge du format csv           | Terminé  |
-| Drag & drop d'un fichier tableur        | En cours |
+| Drag & drop d'un fichier tableur        | Terminé  |
 | Affichage des données SQL sur le site   | Terminé  |
 | Auto complétion par nom de fichier      | En cours |
-| Téléchargement du fichier au format sql | En cours |
+| Téléchargement du fichier au format sql | Terminé  |
+| Option de copier/coller                 | En cours |
+| Mise en place d'une connectivité BDD    | En cours |
 
 ## Setup du projet
 

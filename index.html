@@ -5,22 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/icon.png" />
-    <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/dragfile.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/checkbox.css">
+    <link rel="stylesheet" href="styles/table_field.css">
+    <!-- <link rel="stylesheet" href="styles/download.css"> -->
+
     <title>Convertion csv - sql</title>
 </head>
 
 <body>
     <main>
-        <h1>Converter Excel to SQL</h1>
+        <h1>Converter <span id="excel_label">Excel</span> to <span id="sql_label">SQL</span></h1>
 
         <form>
             <p>
-                <label for="excel_file">Excel file : </label><br>
-                <input type="file" name="excel_file" id="excel_file" accept=".csv, .xls, .xlsx" required><br>
+            <div class="drop-zone">
+                <span class="drop-zone__prompt">Drop Excel file here or click to upload</span>
+                <input type="file" name="excel_file" id="excel_file" accept=".csv, .xls, .xlsx" class="drop-zone__input" required>
+            </div><br>
+            </p>
+            <p class="form_group">
+                <label for="table_name" class="label_table_name">Table name : </label>
+                <input type="text" id="table_name" class="table_name" placeholder="Table name" required>
             </p>
             <p>
-                <label for="table_name">Table name : </label><br>
-                <input type="text" id="table_name" required>
+                <label for="checkmark_field">Create table</label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="checkmark_field" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </p>
+            <p>
+                <label for="sgbd">SGBD type : </label>
+                <select id="sgbd">
+                    <option value="postgres">Postgres</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="mariadb">MariaDB</option>
+                    <option value="oracle23c">Oracle 23c +</option>
+                    <option value="oracle21c">Oracle 21c -</option>
+                    <option value="sqlserver">SQL Server</option>
+                    <option value="sqlite">SQL Lite</option>
+                </select>
             </p>
             <input type="submit" value="Generate SQL file" id="sql_generate_btn">
         </form>
@@ -28,13 +56,14 @@
         <!-- Resultat de la requête en SQL -->
         <p>
             <output>
-                <textarea id="sql_area" rows="15" cols="50" disabled></textarea>
+                <textarea id="sql_area" rows="15" cols="50" style="color: black;" disabled></textarea>
             </output>
         </p>
 
         <p><input type="button" value="Download" id="download_btn" hidden="true"></p>
 
-        <script src="generate.js" async defer></script>
+        <script src="scripts/main.js" type="module" async defer></script>
+        <script src="scripts/dragfile.js" type="module" async defer></script>
     </main>
 </body>
 
